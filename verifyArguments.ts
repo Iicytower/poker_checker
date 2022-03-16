@@ -7,7 +7,7 @@ export function verifyArguments(firstHand: string, secondHand: string): boolean 
     result = false;
   }
 
-  const availableCharacters = /^[AKQJ098765432]{5}$/
+  const availableCharacters = /^[AKQJT98765432]{5}$/;
 
   if (result && !availableCharacters.test(firstHand)) {
     console.log('First hand is not correct poker hand');
