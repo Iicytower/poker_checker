@@ -15,10 +15,12 @@ export function fullHouseVerify(hand: string){
   const doesMatchV1Pattern = regexMatch2.test(firstPieceV1) && regexMatch3.test(secondPieceV1);
   const doesMatchV2Pattern = regexMatch3.test(firstPieceV2) && regexMatch2.test(secondPieceV2);
 
+  const highestCard = (doesMatchV1Pattern) ? cardsFromHandSortted[cardsFromHandSortted.length-1] : hand[0];
+
   const value: Hand = {
     originalValue: cardsFromHandSortted,
     value: 1,
-    highestCardVerify: '',
+    highestCardVerify: highestCard,
     figure: (doesMatchV1Pattern || doesMatchV2Pattern) ? 'fullHouse' : '',
   }
   
