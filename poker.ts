@@ -14,13 +14,15 @@ function main (firstArg: string, secondArg: string){
   }
   
   const firstHandValue = handValue(firstHand);
-  // const secondHandValue = handValue(secondHand);
-
-
-  console.log(firstHandValue);
-  // console.log(secondHandValue);
+  console.log('firstHandValue', firstHandValue);
+  
+  const secondHandValue = handValue(secondHand);
+  console.log('secondHandValue', secondHandValue);
   
 }
   
-main('4444T', 'T547J'); 
+console.log('4444T', '33JJ3', ' \n ');
+main('4444T', '33JJ3'); 
+
+console.log('TTTT4', '4TTT4', ' \n ');
 main('TTTT4', '4TTT4'); 
