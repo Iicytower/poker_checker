@@ -14,14 +14,10 @@ export function triplesVerify(hand: string): Hand{
 
   const highestCards = (indexOfOneOfTheThreeCard === 0) ? cardsFromHandSortted.slice(3,5) : cardsFromHandSortted.slice(0,2);
 
-  const [ card1, card2 ] = highestCards.split('');
-
-  higherCard(card1, card2);
-
   const value: Hand = {
     originalValue: cardsFromHandSortted,
     value: 0,
-    highestCardVerify: higherCard(card1, card2),
+    highestCardVerify: higherCard(highestCards.split('')),
     figure: (doesHandIsTriple) ? 'triples' : '',
   }
   

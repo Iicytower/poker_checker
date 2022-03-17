@@ -1,11 +1,14 @@
 import { availableCards } from "../constantValues";
 
-export function higherCard (card1: string, card2: string): string {
+export function higherCard (cards: string[]): string {
 
-  const card1Value = availableCards.indexOf(card1);
-  const card2Value = availableCards.indexOf(card2);
+  return cards.reduce((acc, card) => {
 
-  return (card1Value > card2Value) ? card2 : card1;
+    const card1Value = availableCards.indexOf(acc);
+    const card2Value = availableCards.indexOf(card);
+  
+    return (card1Value > card2Value) ? card : acc;
 
+  });
 
 }
