@@ -9,12 +9,12 @@ export function verifyArguments(firstHand: string, secondHand: string): boolean 
 
   const availableCharacters = /^[AKQJT98765432]{5}$/;
 
-  if (result && !availableCharacters.test(firstHand)) {
+  if (!availableCharacters.test(firstHand)) {
     console.log('First hand is not correct poker hand');
     result = false;
   }
 
-  if (result && !availableCharacters.test(secondHand)) {
+  if (!availableCharacters.test(secondHand)) {
     console.log('Second hand is not correct poker hand');
     result = false;
   }

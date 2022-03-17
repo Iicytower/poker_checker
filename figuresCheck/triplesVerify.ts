@@ -4,18 +4,16 @@ import { Hand } from "../interfaces";
 export function triplesVerify(hand: string): Hand{
   const tripleRegex: RegExp = /(.)\1{2}/;
 
-  const cardsFromHandSortted = hand.split('').sort().join('');
+  const doesHandIsTriple = tripleRegex.test(hand);
 
-  const doesHandIsTriple = tripleRegex.test(cardsFromHandSortted);
+  const [,,oneOfTheThreeCard] = hand;
 
-  const [,,oneOfTheThreeCard] = cardsFromHandSortted;
+  const indexOfOneOfTheThreeCard: number = hand.indexOf(oneOfTheThreeCard);
 
-  const indexOfOneOfTheThreeCard: number = cardsFromHandSortted.indexOf(oneOfTheThreeCard);
-
-  const highestCards = (indexOfOneOfTheThreeCard === 0) ? cardsFromHandSortted.slice(3,5) : cardsFromHandSortted.slice(0,2);
+  const highestCards = (indexOfOneOfTheThreeCard === 0) ? hand.slice(3,5) : hand.slice(0,2);
 
   const value: Hand = {
-    originalValue: cardsFromHandSortted,
+    originalValue: hand,
     value: 0,
     highestCardVerify: higherCard(highestCards.split('')),
     figure: (doesHandIsTriple) ? 'triples' : '',

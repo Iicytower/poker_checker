@@ -4,18 +4,16 @@ export function fourOfAKindVerify(hand: string): Hand {
 
   const fourOfKindRegex: RegExp = /(.)\1{3}/;
 
-  const cardsFromHandSortted = hand.split('').sort().join('');
+  const doesHandIsFourOfAKind = fourOfKindRegex.test(hand);
 
-  const doesHandIsFourOfAKind = fourOfKindRegex.test(cardsFromHandSortted);
+  const [,,oneOfTheFourCard] = hand;
 
-  const [,,oneOfTheFourCard] = cardsFromHandSortted;
+  const indexOfStartTheFourCard: number = hand.indexOf(oneOfTheFourCard);
 
-  const indexOfStartTheFourCard: number = cardsFromHandSortted.indexOf(oneOfTheFourCard);
-
-  const highestCard: string = (indexOfStartTheFourCard === 0) ? cardsFromHandSortted[4] : cardsFromHandSortted[0];
+  const highestCard: string = (indexOfStartTheFourCard === 0) ? hand[4] : hand[0];
 
   const value: Hand = {
-    originalValue: cardsFromHandSortted,
+    originalValue: hand,
     value: 0,
     highestCardVerify: highestCard,
     figure: (doesHandIsFourOfAKind) ? 'fourOfAKind' : '',

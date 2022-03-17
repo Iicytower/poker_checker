@@ -3,12 +3,12 @@ import { Hand } from "../interfaces";
 
 export function highestCardVerify(hand: string){
   
-  const cardsFromHandSortted = hand.split('').sort();
+  const cardsFromHand = hand.split('');
 
-  const highestCard = higherCard(cardsFromHandSortted);
+  const highestCard = higherCard(cardsFromHand);
 
   const value: Hand = {
-    originalValue: cardsFromHandSortted.join(''),
+    originalValue: cardsFromHand.join(''),
     value: 0,
     highestCardVerify: highestCard,
     figure: 'highestCard',
