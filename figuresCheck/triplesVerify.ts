@@ -1,4 +1,4 @@
-import { Hand } from "../interfaces";
+import { Hand } from "../models";
 
 export function triplesVerify(hand: string): Hand{
   const tripleRegex: RegExp = /(.)\1{2}/;

@@ -1,5 +1,5 @@
 import { highestCardVerify, pairVerify, twoPairsVerify, triplesVerify, fullHouseVerify, fourOfAKindVerify } from "./figuresCheck/index";
-import { Hand, TwoPairsHand, PairsHand } from "./interfaces";
+import { Hand, TwoPairsHand, PairsHand } from "./models";
 
 export function handValue (hand: string): Hand {
 

@@ -1,5 +1,5 @@
 import { higherCard } from "../helpers/higherCard";
-import { Hand } from "../interfaces";
+import { Hand } from "../models";
 
 export function highestCardVerify(hand: string){
   

@@ -1,5 +1,5 @@
 import { higherCard } from "../helpers/higherCard";
-import { PairsHand } from "../interfaces";
+import { PairsHand } from "../models";
 
 export function pairVerify(hand: string): PairsHand{
   const pairRegex: RegExp = /(.)\1{1}/;

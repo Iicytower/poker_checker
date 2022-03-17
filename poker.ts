@@ -1,7 +1,8 @@
 import { verifyArguments } from './verifyArguments';
 import { handValue } from './handValue';
+import { compareHands } from './compareHands';
 
-function main (firstArg: string, secondArg: string){
+function main (firstArg: string, secondArg: string): void{
 
   // const [ firstArg, secondArg ] = process.argv.slice(2);
 
@@ -14,15 +15,11 @@ function main (firstArg: string, secondArg: string){
   }
   
   const firstHandValue = handValue(firstHand);
-  console.log('firstHandValue', firstHandValue);
   
   const secondHandValue = handValue(secondHand);
-  console.log('secondHandValue', secondHandValue);
+
+  const result = compareHands(firstHandValue, secondHandValue);
+
+  console.log(result);
   
 }
-  
-console.log('4444T', '33JJ3', ' \n ');
-main('4444T', '33JJ3'); 
-
-console.log('TTTT4', '4TTT4', ' \n ');
-main('TTTT4', '4TTT4'); 

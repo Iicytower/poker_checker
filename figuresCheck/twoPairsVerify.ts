@@ -1,5 +1,5 @@
 import { higherCard } from "../helpers/higherCard";
-import { TwoPairsHand } from "../interfaces";
+import { TwoPairsHand } from "../models";
 
 export function twoPairsVerify(hand: string): TwoPairsHand {
 

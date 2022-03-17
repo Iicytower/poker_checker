@@ -1,4 +1,4 @@
-import { Hand } from "../interfaces";
+import { Hand } from "../models";
 
 export function fourOfAKindVerify(hand: string): Hand {
 
