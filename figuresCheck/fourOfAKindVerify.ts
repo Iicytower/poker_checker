@@ -6,11 +6,7 @@ export function fourOfAKindVerify(hand: string): Hand {
 
   const doesHandIsFourOfAKind = fourOfKindRegex.test(hand);
 
-  const [,,oneOfTheFourCard] = hand;
-
-  const indexOfStartTheFourCard: number = hand.indexOf(oneOfTheFourCard);
-
-  const highestCard: string = (indexOfStartTheFourCard === 0) ? hand[4] : hand[0];
+  const [,,highestCard] = hand;
 
   const value: Hand = {
     originalValue: hand,

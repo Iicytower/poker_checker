@@ -1,6 +1,7 @@
-import { Hand } from "../interfaces";
+import { higherCard } from "../helpers/higherCard";
+import { TwoPairsHand } from "../interfaces";
 
-export function twoPairsVerify(hand: string): Hand {
+export function twoPairsVerify(hand: string): TwoPairsHand {
 
   const { pairsCards, pairsFound } = hand.split('').reduce((acc, card) => {
 
@@ -20,16 +21,23 @@ export function twoPairsVerify(hand: string): Hand {
   const doesHandIsTwoPairs = (pairsFound === 2); 
 
   let highestCard: string = '';
+  let firstCardFromPair: string = '';
+  let secondCardFromPair: string = '';
   if (doesHandIsTwoPairs) {
 
     const regexToRemoveUnnecessaryCards = new RegExp(`[${pairsCards}]`, 'g');
     highestCard = hand.replace(regexToRemoveUnnecessaryCards, '');
 
+    firstCardFromPair = higherCard(pairsCards.split(''));
+    secondCardFromPair = pairsCards.replace(firstCardFromPair, '');
+
   }
 
-  const value: Hand = {
+  const value: TwoPairsHand = {
     originalValue: hand,
-    value: 0,
+    value: 3,
+    firstCardFromPair,
+    secondCardFromPair,
     highestCardVerify: highestCard,
     figure: (doesHandIsTwoPairs) ? 'twoPairs' : '',
   }

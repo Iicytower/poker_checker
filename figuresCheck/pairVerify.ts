@@ -1,20 +1,21 @@
 import { higherCard } from "../helpers/higherCard";
-import { Hand } from "../interfaces";
+import { PairsHand } from "../interfaces";
 
-export function pairVerify(hand: string): Hand{
+export function pairVerify(hand: string): PairsHand{
   const pairRegex: RegExp = /(.)\1{1}/;
 
   const [pair] = hand.match(pairRegex) ?? [];
 
+  console.log(pair);
+
   const highestCard = higherCard(hand.replace(pair, '').split(''));
 
-  const doesHandIsPair = !!pair;
-
-  const value: Hand = {
+  const value: PairsHand = {
     originalValue: hand,
-    value: 0,
+    value: 4,
     highestCardVerify: highestCard,
-    figure: (doesHandIsPair) ? 'pair' : '',
+    pairsCard: pair.slice(0,1),
+    figure: (pair) ? 'pair' : '',
   }
   
   return value;

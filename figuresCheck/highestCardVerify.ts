@@ -9,7 +9,7 @@ export function highestCardVerify(hand: string){
 
   const value: Hand = {
     originalValue: cardsFromHand.join(''),
-    value: 0,
+    value: 5,
     highestCardVerify: highestCard,
     figure: 'highestCard',
   }

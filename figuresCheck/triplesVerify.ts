@@ -1,4 +1,3 @@
-import { higherCard } from "../helpers/higherCard";
 import { Hand } from "../interfaces";
 
 export function triplesVerify(hand: string): Hand{
@@ -6,16 +5,12 @@ export function triplesVerify(hand: string): Hand{
 
   const doesHandIsTriple = tripleRegex.test(hand);
 
-  const [,,oneOfTheThreeCard] = hand;
-
-  const indexOfOneOfTheThreeCard: number = hand.indexOf(oneOfTheThreeCard);
-
-  const highestCards = (indexOfOneOfTheThreeCard === 0) ? hand.slice(3,5) : hand.slice(0,2);
+  const [,,highestCards] = hand;
 
   const value: Hand = {
     originalValue: hand,
-    value: 0,
-    highestCardVerify: higherCard(highestCards.split('')),
+    value: 2,
+    highestCardVerify: highestCards,
     figure: (doesHandIsTriple) ? 'triples' : '',
   }
   

@@ -1,5 +1,5 @@
 import { highestCardVerify, pairVerify, twoPairsVerify, triplesVerify, fullHouseVerify, fourOfAKindVerify } from "./figuresCheck/index";
-import { Hand } from "./interfaces";
+import { Hand, TwoPairsHand, PairsHand } from "./interfaces";
 
 export function handValue (hand: string): Hand {
 
@@ -14,10 +14,10 @@ export function handValue (hand: string): Hand {
   const triple: Hand = triplesVerify(cardsFromHandSortted);
   if(triple.figure === 'triples') return triple;
 
-  const twoPairs: Hand = twoPairsVerify(cardsFromHandSortted);
+  const twoPairs: TwoPairsHand = twoPairsVerify(cardsFromHandSortted);
   if(twoPairs.figure === 'twoPairs') return twoPairs;
 
-  const pair: Hand = pairVerify(cardsFromHandSortted);
+  const pair: PairsHand = pairVerify(cardsFromHandSortted);
   if(pair.figure === 'pair') return pair;
 
   const highestCard: Hand = highestCardVerify(cardsFromHandSortted);
