@@ -12,6 +12,9 @@ export function handValue (hand: string): Hand {
   const triple: Hand = triplesVerify(hand);
   if(triple.figure === 'triples') return triple;
 
-  return triple;
+  const twoPairs: Hand = twoPairsVerify(hand);
+  if(twoPairs.figure === 'twoPairs') return twoPairs;
+
+  return twoPairs;
 
 }
