@@ -106,3 +106,5 @@ dist
 # my
 *.pdf
 .history/
+*.sh
+notes.txt

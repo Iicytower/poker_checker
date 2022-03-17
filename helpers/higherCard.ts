@@ -1,4 +1,4 @@
-import { availableCards } from "../constantValues";
+import { availableCards } from '../constantValues';
 
 export function higherCard (cards: string[]): string {
 

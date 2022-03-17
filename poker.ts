@@ -4,13 +4,11 @@ import { compareHands } from './compareHands';
 
 function main (firstArg: string, secondArg: string): void{
 
-  // const [ firstArg, secondArg ] = process.argv.slice(2);
-
-  const firstHand = firstArg.toUpperCase()
-  const secondHand = secondArg.toUpperCase()
+  const firstHand = firstArg.toUpperCase();
+  const secondHand = secondArg.toUpperCase();
   
   if (!verifyArguments(firstHand, secondHand)){
-    console.log('Please send the arguments again');
+    console.log('Please send the arguments again.');
     process.exit(1);
   }
   
@@ -23,3 +21,7 @@ function main (firstArg: string, secondArg: string): void{
   console.log(result);
   
 }
+
+const [ firstArg, secondArg ] = process.argv.slice(2);
+
+main(firstArg, secondArg)

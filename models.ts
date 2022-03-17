@@ -20,5 +20,5 @@ export interface PairsHand extends Hand {
 export enum Wins {
   first = 'First hand wins!',
   second = 'Second hand wins!',
-  tie = 'There is tie, maybe next round!'
+  tie = `It's a tie!`
 }

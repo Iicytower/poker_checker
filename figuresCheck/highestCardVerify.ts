@@ -1,5 +1,5 @@
-import { higherCard } from "../helpers/higherCard";
-import { Hand } from "../models";
+import { higherCard } from '../helpers/higherCard';
+import { Hand } from '../models';
 
 export function highestCardVerify(hand: string){
   

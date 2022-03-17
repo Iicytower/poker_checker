@@ -1,5 +1,5 @@
-import { higherCard } from "../helpers/higherCard";
-import { TwoPairsHand, Wins } from "../models";
+import { higherCard } from '../helpers/higherCard';
+import { TwoPairsHand, Wins } from '../models';
 
 export function twoPairsCompare (firstHand: TwoPairsHand, secondHand: TwoPairsHand): Wins {
 

@@ -1,4 +1,4 @@
-import { Hand } from "../models";
+import { Hand } from '../models';
 
 export function fullHouseVerify(hand: string){
   const regexMatch2: RegExp = /(.)\1{1}/;

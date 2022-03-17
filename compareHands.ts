@@ -1,5 +1,5 @@
-import { Hand, PairsHand, TwoPairsHand, Wins } from "./models";
-import { defaultCompare, twoPairsCompare, pairsCompare } from "./compareHands/index"
+import { Hand, PairsHand, TwoPairsHand, Wins } from './models';
+import { defaultCompare, twoPairsCompare, pairsCompare } from './compareHands/index'
 
 type AllowedHands = Hand | PairsHand | TwoPairsHand;
 
