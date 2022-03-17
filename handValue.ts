@@ -18,6 +18,7 @@ export function handValue (hand: string): Hand {
   const pair: Hand = pairVerify(hand);
   if(pair.figure === 'pair') return pair;
 
-  return pair;
+  const highestCard: Hand = highestCardVerify(hand);
+  return highestCard;
 
 }
