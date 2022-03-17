@@ -6,15 +6,13 @@ export function pairVerify(hand: string): PairsHand{
 
   const [pair] = hand.match(pairRegex) ?? [];
 
-  console.log(pair);
-
   const highestCard = higherCard(hand.replace(pair, '').split(''));
 
   const value: PairsHand = {
     originalValue: hand,
     value: 4,
     highestCardVerify: highestCard,
-    pairsCard: pair.slice(0,1),
+    pairsCard: (pair) ? pair.slice(0,1) : '',
     figure: (pair) ? 'pair' : '',
   }
   
