@@ -1,8 +1,9 @@
 import { verifyArguments } from './verifyArguments';
 import { handValue } from './handValue';
 import { compareHands } from './compareHands';
+import { Wins } from './models';
 
-function main(firstArg: string, secondArg: string): void {
+function main(firstArg: string, secondArg: string): Wins {
   if (!firstArg || !secondArg) {
     console.log(`You don't send the arguments.`);
     process.exit(1);
@@ -22,9 +23,9 @@ function main(firstArg: string, secondArg: string): void {
 
   const result = compareHands(firstHandValue, secondHandValue);
 
-  console.log(result);
+  return result;
 }
 
 const [firstArg, secondArg] = process.argv.slice(2);
 
-main(firstArg, secondArg);
+console.log(main(firstArg, secondArg));

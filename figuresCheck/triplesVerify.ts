@@ -5,7 +5,7 @@ export function triplesVerify(hand: string): Hand{
 
   const doesHandIsTriple = tripleRegex.test(hand);
 
-  const [,,highestCards] = hand;
+  const [,,highestCards] = hand.split('');
 
   const value: Hand = {
     originalValue: hand,

@@ -6,7 +6,7 @@ export function fourOfAKindVerify(hand: string): Hand {
 
   const doesHandIsFourOfAKind = fourOfKindRegex.test(hand);
 
-  const [,,highestCard] = hand;
+  const [,,highestCard] = hand.split('');
 
   const value: Hand = {
     originalValue: hand,

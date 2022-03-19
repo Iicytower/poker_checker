@@ -108,3 +108,4 @@ dist
 .history/
 *.sh
 notes.txt
+coverage-ts/

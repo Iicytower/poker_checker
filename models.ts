@@ -27,3 +27,5 @@ export enum Wins {
   second = 'Second hand wins!',
   tie = `It's a tie!`,
 }
+
+export type AllowedHands = Hand | PairsHand | TwoPairsHand;

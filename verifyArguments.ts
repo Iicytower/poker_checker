@@ -3,11 +3,6 @@ import { sortCards } from './helpers/sortCards';
 export function verifyArguments(firstHand: string, secondHand: string): boolean {
   let result = true;
 
-  if (!(firstHand && secondHand)) {
-    console.log('There is no arguments');
-    result = false;
-  }
-
   const availableCharacters = /^[AKQJT98765432]{5}$/;
 
   if (!availableCharacters.test(firstHand)) {
@@ -31,7 +26,7 @@ export function verifyArguments(firstHand: string, secondHand: string): boolean 
     for (const item in counts) {
       if (counts[item] > 4) {
         console.log(
-          `It is not possible that the deck contains ${counts[item]} ${item} cards.`,
+          `It's not possible that the deck contains ${counts[item]} ${item} cards.`,
         );
         result = false;
       }

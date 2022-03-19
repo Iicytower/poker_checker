@@ -1,12 +1,10 @@
-import { Hand, PairsHand, TwoPairsHand, Wins } from './models';
+import { PairsHand, TwoPairsHand, Wins, AllowedHands } from './models';
 import {
   defaultCompare,
   twoPairsCompare,
   pairsCompare,
   highestCardCompare,
 } from './compareHands/index';
-
-type AllowedHands = Hand | PairsHand | TwoPairsHand;
 
 export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands): Wins {
   if (firstHand.value < secondHand.value) return Wins.first;
@@ -26,12 +24,10 @@ export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands):
       return defaultCompare(firstHand, secondHand);
       break;
     case 'twoPairs':
-      //@ts-ignore
-      return twoPairsCompare(firstHand, secondHand);
+      return twoPairsCompare(<TwoPairsHand>firstHand, <TwoPairsHand>secondHand);
       break;
     case 'pair':
-      //@ts-ignore TODO
-      return pairsCompare(firstHand, secondHand);
+      return pairsCompare(<PairsHand>firstHand, <PairsHand>secondHand);
       break;
     case 'highestCard':
       return highestCardCompare(firstHand, secondHand);
