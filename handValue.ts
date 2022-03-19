@@ -6,7 +6,7 @@ import {
   fullHouseVerify,
   fourOfAKindVerify,
 } from './figuresCheck/index';
-import { sortCards } from './helpers/sort';
+import { sortCards } from './helpers/sortCards';
 import { Hand, TwoPairsHand, PairsHand } from './models';
 
 export function handValue(hand: string): Hand {
