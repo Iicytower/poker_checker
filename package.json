@@ -4,8 +4,9 @@
   "description": "this script receives two arguments from CLI and decide which is better based on poker rules",
   "main": "/dist/poker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node poker.ts"
+    "start": "ts-node poker.ts",
+    "prettier": "prettier -w ./*.ts",
+    "prettierCheck": "prettier --check ./*.ts"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "typescript": "^4.6.2",
-    "ts-node": "^10.7.0"
+    "prettier": "^2.6.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
   }
 }

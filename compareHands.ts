@@ -1,15 +1,19 @@
 import { Hand, PairsHand, TwoPairsHand, Wins } from './models';
-import { defaultCompare, twoPairsCompare, pairsCompare, highestCardCompare } from './compareHands/index'
+import {
+  defaultCompare,
+  twoPairsCompare,
+  pairsCompare,
+  highestCardCompare,
+} from './compareHands/index';
 
 type AllowedHands = Hand | PairsHand | TwoPairsHand;
 
 export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands) {
-
-  if(firstHand.value < secondHand.value){
+  if (firstHand.value < secondHand.value) {
     return Wins.first;
   }
 
-  if(firstHand.value > secondHand.value){
+  if (firstHand.value > secondHand.value) {
     return Wins.second;
   }
 

@@ -1,8 +1,7 @@
 export function verifyArguments(firstHand: string, secondHand: string): boolean {
-
   let result = true;
 
-  if(!(firstHand && secondHand)){
+  if (!(firstHand && secondHand)) {
     console.log('There is no arguments');
     result = false;
   }
@@ -20,5 +19,4 @@ export function verifyArguments(firstHand: string, secondHand: string): boolean 
   }
 
   return result;
-
 }

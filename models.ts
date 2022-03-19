@@ -1,11 +1,16 @@
-
-export type Figure = 'highestCard' | 'pair' | 'twoPairs' | 'triples' | 'fullHouse' | 'fourOfAKind';
+export type Figure =
+  | 'highestCard'
+  | 'pair'
+  | 'twoPairs'
+  | 'triples'
+  | 'fullHouse'
+  | 'fourOfAKind';
 
 export interface Hand {
-  originalValue: string,
-  value: number,
-  highestCardVerify: string,
-  figure: '' | Figure
+  originalValue: string;
+  value: number;
+  highestCardVerify: string;
+  figure: '' | Figure;
 }
 
 export interface TwoPairsHand extends Hand {
@@ -20,5 +25,5 @@ export interface PairsHand extends Hand {
 export enum Wins {
   first = 'First hand wins!',
   second = 'Second hand wins!',
-  tie = `It's a tie!`
+  tie = `It's a tie!`,
 }
