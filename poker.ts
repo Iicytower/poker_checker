@@ -4,6 +4,11 @@ import { compareHands } from './compareHands';
 
 function main (firstArg: string, secondArg: string): void{
 
+  if(!firstArg || !secondArg) {
+    console.log(`You don't send the arguments.`);
+    process.exit(1);
+  }
+
   const firstHand = firstArg.toUpperCase();
   const secondHand = secondArg.toUpperCase();
   

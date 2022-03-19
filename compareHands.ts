@@ -1,5 +1,5 @@
 import { Hand, PairsHand, TwoPairsHand, Wins } from './models';
-import { defaultCompare, twoPairsCompare, pairsCompare } from './compareHands/index'
+import { defaultCompare, twoPairsCompare, pairsCompare, highestCardCompare } from './compareHands/index'
 
 type AllowedHands = Hand | PairsHand | TwoPairsHand;
 
@@ -14,9 +14,6 @@ export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands) 
   }
 
   const { figure } = firstHand;
-
-  // console.log('firstHand ', firstHand);
-  // console.log('secondHand ', secondHand);
 
   switch (figure) {
     case 'fourOfAKind':
@@ -37,7 +34,7 @@ export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands) 
       return pairsCompare(firstHand, secondHand);
       break;
     case 'highestCard':
-      return defaultCompare(firstHand, secondHand);
+      return highestCardCompare(firstHand, secondHand);
       break;
     default:
       return Wins.tie;

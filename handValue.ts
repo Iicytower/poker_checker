@@ -1,9 +1,10 @@
 import { highestCardVerify, pairVerify, twoPairsVerify, triplesVerify, fullHouseVerify, fourOfAKindVerify } from './figuresCheck/index';
+import { sortCards } from './helpers/sort';
 import { Hand, TwoPairsHand, PairsHand } from './models';
 
 export function handValue (hand: string): Hand {
 
-  const cardsFromHandSortted = hand.split('').sort().join('');
+  const cardsFromHandSortted = sortCards(hand.split('')).join('');
 
   const fourOfAKind: Hand = fourOfAKindVerify(cardsFromHandSortted);
   if(fourOfAKind.figure === 'fourOfAKind') return fourOfAKind;

@@ -1,5 +1,6 @@
 import { higherCard } from '../helpers/higherCard';
 import { Wins, PairsHand } from '../models';
+import { compareGroup } from './compareGroup';
 
 export function pairsCompare (firstHand: PairsHand, secondHand: PairsHand): Wins {
 
@@ -8,11 +9,11 @@ export function pairsCompare (firstHand: PairsHand, secondHand: PairsHand): Wins
     return (firstHand.pairsCard === pairCardWiner) ? Wins.first : Wins.second;
   }
 
-  if(firstHand.highestCardVerify !== secondHand.highestCardVerify){
-    const highestCard = higherCard([firstHand.highestCardVerify, secondHand.highestCardVerify])
-    return (firstHand.highestCardVerify === highestCard) ? Wins.first : Wins.second;
-  }
+  const result = compareGroup(
+    firstHand.originalValue.replace(new RegExp(`${firstHand.highestCardVerify}`, 'g'), '').split('')
+    , secondHand.originalValue.replace(new RegExp(`${secondHand.highestCardVerify}`, 'g'), '').split('')
+    )
 
-  return Wins.tie;
+  return result;
   
 }
