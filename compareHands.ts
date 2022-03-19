@@ -8,14 +8,10 @@ import {
 
 type AllowedHands = Hand | PairsHand | TwoPairsHand;
 
-export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands) {
-  if (firstHand.value < secondHand.value) {
-    return Wins.first;
-  }
+export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands): Wins {
+  if (firstHand.value < secondHand.value) return Wins.first;
 
-  if (firstHand.value > secondHand.value) {
-    return Wins.second;
-  }
+  if (firstHand.value > secondHand.value) return Wins.second;
 
   const { figure } = firstHand;
 
@@ -30,7 +26,7 @@ export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands) 
       return defaultCompare(firstHand, secondHand);
       break;
     case 'twoPairs':
-      //@ts-ignore TODO
+      //@ts-ignore
       return twoPairsCompare(firstHand, secondHand);
       break;
     case 'pair':
