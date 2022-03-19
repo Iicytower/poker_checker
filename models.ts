@@ -23,9 +23,9 @@ export interface PairsHand extends Hand {
 }
 
 export enum Wins {
-  first = 'First hand wins!',
-  second = 'Second hand wins!',
-  tie = `It's a tie!`,
+  First = 'First hand wins!',
+  Second = 'Second hand wins!',
+  Tie = `It's a tie!`,
 }
 
 export type AllowedHands = Hand | PairsHand | TwoPairsHand;

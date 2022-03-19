@@ -5,19 +5,19 @@ export function twoPairsCompare (firstHand: TwoPairsHand, secondHand: TwoPairsHa
 
   if(firstHand.firstCardFromPair !== secondHand.firstCardFromPair){
     const firstCardWiner = higherCard([firstHand.firstCardFromPair, secondHand.firstCardFromPair])
-    return (firstHand.firstCardFromPair === firstCardWiner) ? Wins.first : Wins.second;
+    return (firstHand.firstCardFromPair === firstCardWiner) ? Wins.First : Wins.Second;
   }
 
   if(firstHand.secondCardFromPair !== secondHand.secondCardFromPair){
     const secondCardWiner = higherCard([firstHand.secondCardFromPair, secondHand.secondCardFromPair])
-    return (firstHand.secondCardFromPair === secondCardWiner) ? Wins.first : Wins.second;
+    return (firstHand.secondCardFromPair === secondCardWiner) ? Wins.First : Wins.Second;
   }
 
   if(firstHand.highestCardVerify !== secondHand.highestCardVerify){
     const highestCard = higherCard([firstHand.highestCardVerify, secondHand.highestCardVerify])
-    return (firstHand.highestCardVerify === highestCard) ? Wins.first : Wins.second;
+    return (firstHand.highestCardVerify === highestCard) ? Wins.First : Wins.Second;
   }
 
-  return Wins.tie;
+  return Wins.Tie;
   
 }

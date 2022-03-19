@@ -7,9 +7,9 @@ import {
 } from './compareHands/index';
 
 export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands): Wins {
-  if (firstHand.value < secondHand.value) return Wins.first;
+  if (firstHand.value < secondHand.value) return Wins.First;
 
-  if (firstHand.value > secondHand.value) return Wins.second;
+  if (firstHand.value > secondHand.value) return Wins.Second;
 
   const { figure } = firstHand;
 
@@ -33,7 +33,7 @@ export function compareHands(firstHand: AllowedHands, secondHand: AllowedHands):
       return highestCardCompare(firstHand, secondHand);
       break;
     default:
-      return Wins.tie;
+      return Wins.Tie;
       break;
   }
 }

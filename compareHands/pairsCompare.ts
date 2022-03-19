@@ -6,7 +6,7 @@ export function pairsCompare (firstHand: PairsHand, secondHand: PairsHand): Wins
 
   if(firstHand.pairsCard !== secondHand.pairsCard){
     const pairCardWiner = higherCard([firstHand.pairsCard, secondHand.pairsCard])
-    return (firstHand.pairsCard === pairCardWiner) ? Wins.first : Wins.second;
+    return (firstHand.pairsCard === pairCardWiner) ? Wins.First : Wins.Second;
   }
 
   const result = compareGroup(

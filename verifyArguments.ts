@@ -19,7 +19,7 @@ export function verifyArguments(firstHand: string, secondHand: string): boolean 
     const allCards = sortCards(`${firstHand}${secondHand}`.split(''));
 
     const counts: Record<string, number> = {};
-    allCards.forEach(function (card) {
+    allCards.forEach((card) => {
       counts[card] = (counts[card] || 0) + 1;
     });
 

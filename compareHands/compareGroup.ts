@@ -11,17 +11,17 @@ export function compareGroup (firstHand:string[], secondHand: string[]): Wins {
     const cardFromsecondHandValue = availableCards.indexOf(secondHand[index]);
 
     if (cardFromfirstHandValue < cardFromsecondHandValue){
-      acc.winner = Wins.first;
+      acc.winner = Wins.First;
       acc.changeCounter = true;
     }
     if (cardFromfirstHandValue > cardFromsecondHandValue){
-      acc.winner = Wins.second;
+      acc.winner = Wins.Second;
       acc.changeCounter = true;
     }
     return acc;
 
   }, {
-    winner: Wins.tie,
+    winner: Wins.Tie,
     changeCounter: false
   });
 
